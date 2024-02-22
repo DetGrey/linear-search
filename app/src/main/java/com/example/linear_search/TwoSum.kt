@@ -4,7 +4,12 @@ fun main() {
     val nums: List<Int> = listOf(3,2,4)
     val target = 6
     twoSum(nums, target)
-    twoSum(listOf(), 7)
+//    twoSum(listOf(-1,-2,-3,-4,-5), -8)
+//    twoSum(listOf(-5,20,3,-2,4,1), 18)
+//    twoSum(listOf(0,0,3,4), 0)
+//    twoSum(listOf(1000,2000,3000,4000), 7000)
+//    twoSum(listOf(1,2,3,2,4), 4)
+//    twoSum(listOf(5,5,3,8,2,7,4), 9)
 }
 
 /*
@@ -38,7 +43,7 @@ fun twoSum(nums: List<Int>, target: Int) {
         for (j in nums.indices) {
             if (nums[i] + nums[j] == target && i != j) {
                 println("[$i, ${j}]")
-                println("Explanation: Because ${nums[i]} + ${nums[j]} == $target")
+                println("Explanation: Because ${nums[i]} + ${nums[j]} = $target")
                 return
             }
         }
