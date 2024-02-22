@@ -54,8 +54,8 @@ fun binarySearch2(array: List<Int>, target: Int): Int {
 
         when {
             array[mid] == target -> return mid
-            array[mid] > target -> max = mid - 1
-            array[mid] < target -> min = mid + 1
+            array[mid] > target -> max = mid
+            array[mid] < target -> min = mid
         }
     }
     return -1
