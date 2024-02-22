@@ -1,7 +1,7 @@
 package com.example.linear_search
 
 fun main() {
-    val input = arrayOf(10,3,5,4,6,5,3,2)
+    val input = arrayOf(10,3,5,4,6,5,3,10,2)
     firstRepeatingElement(input)
 }
 
@@ -20,20 +20,30 @@ In this exercise you should use a index-based linear data structure such as an a
 fun firstRepeatingElement(array: Array<Int>) {
     val foundNums: MutableList<Int> = mutableListOf()
 
+    val repeatedNums: MutableList<Int> = mutableListOf()
+
     for (num1 in array) {
         if (foundNums.size == 0) {
             foundNums.add(num1)
         }
-        for (num2 in foundNums) {
-            if (num1 == num2) {
-                println(num1)
-                return
+        else {
+            for (num2 in foundNums) {
+//                println("1: $num1, 2: $num2")
+                if (num1 == num2) {
+                    repeatedNums.add(num1)
+                }
             }
-            else {
-                foundNums.add(num1)
-            }
+            foundNums.add(num1)
         }
     }
 
-    println("No repeating element found")
+    for (num1 in array) {
+        for (repeated in repeatedNums) {
+            if (num1 == repeated) {
+                println(num1)
+                println("Explanation: $num1 is the first repeating element with the lowest index")
+                return
+            }
+        }
+    }
 }
