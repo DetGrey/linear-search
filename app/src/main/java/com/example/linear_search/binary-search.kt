@@ -23,6 +23,7 @@ fun binarySearch(array: List<Int>, target: Int, min: Int, max: Int): Int {
     println("Min: $min, max: $max, mid: $mid")
 
     println("mid value: ${array[mid]}")
+
     return if (array[mid] == target) {
         println("Index found at $mid")
         mid
