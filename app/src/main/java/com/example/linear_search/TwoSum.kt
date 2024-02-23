@@ -4,6 +4,7 @@ fun main() {
     val nums: List<Int> = listOf(3,2,4)
     val target = 6
     twoSum(nums, target)
+    twoSumSingleIteration(nums, target)
 //    twoSum(listOf(-1,-2,-3,-4,-5), -8)
 //    twoSum(listOf(-5,20,3,-2,4,1), 18)
 //    twoSum(listOf(0,0,3,4), 0)
@@ -46,6 +47,23 @@ fun twoSum(nums: List<Int>, target: Int) {
                 println("Explanation: Because ${nums[i]} + ${nums[j]} = $target")
                 return
             }
+        }
+    }
+}
+
+// Two sum in single iteration
+fun twoSumSingleIteration(nums: List<Int>, target: Int) {
+    val hashMap: HashMap<Int, Int> = hashMapOf()
+
+    for (i in nums.indices) {
+        hashMap[nums[i]] = i
+
+        val value = target - nums[i]
+
+        if (hashMap[value] != null && hashMap[value] != i) {
+            println("[${hashMap[value]}, $i]")
+            println("Explanation: Because $value + ${nums[i]} = $target")
+            return
         }
     }
 }
